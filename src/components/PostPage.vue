@@ -7,7 +7,12 @@
       <hr/>
     </div>
     <div class="comments">
-      <div v-bind:id="`comment-${commentList.id}`" class="comments__item" v-for="commentList in commentsList" :key="commentList.id">
+      <div 
+        :id="`comment-${commentList.id}`" 
+        class="comments__item" 
+        v-for="commentList in commentsList" 
+        :key="commentList.id"
+      >
         <h3>{{ commentList.name }}</h3>
         <span>{{ commentList.email }}</span>
         <p>{{ formatedCommentText(commentList.body) }}</p>
@@ -64,10 +69,19 @@
     },
     computed: {
       formatedPostDate() {
-        const monthName = ['Января', 'Февраля', 'Марта',
-          'Апреля', 'Мая', 'Июня', 'Июля',
-          'Августа', 'Сентября', 'Октября',
-          'Ноября', 'Декабря'
+        const monthName = [
+          'Января', 
+          'Февраля', 
+          'Марта',
+          'Апреля',
+          'Мая',
+          'Июня',
+          'Июля',
+          'Августа', 
+          'Сентября', 
+          'Октября',
+          'Ноября', 
+          'Декабря'
         ]
         return `${this.post.postDate.getDate()} ${monthName[this.post.postDate.getMonth()]}, ${this.post.postDate.getFullYear()}`
       }
@@ -80,8 +94,7 @@
       font-family: 'Courier New', Courier, monospace;
     }
     span {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-weight: 600;
+      font: 600 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       color: rgb(110, 106, 106);
     }
   }
@@ -89,9 +102,7 @@
   .comments {
     line-height: 5px;
     h3 {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 20px;
-      font-weight: 800;
+      font: 800 20px 'Times New Roman', Times, serif;
       margin-top: 15px;
     }
     span {
