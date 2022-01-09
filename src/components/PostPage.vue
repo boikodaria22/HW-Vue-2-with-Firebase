@@ -69,10 +69,19 @@
     },
     computed: {
       formatedPostDate() {
-        const monthName = ['Января', 'Февраля', 'Марта',
-          'Апреля', 'Мая', 'Июня', 'Июля',
-          'Августа', 'Сентября', 'Октября',
-          'Ноября', 'Декабря'
+        const monthName = [
+          'Января', 
+          'Февраля', 
+          'Марта',
+          'Апреля',
+          'Мая',
+          'Июня',
+          'Июля',
+          'Августа', 
+          'Сентября', 
+          'Октября',
+          'Ноября', 
+          'Декабря'
         ]
         return `${this.post.postDate.getDate()} ${monthName[this.post.postDate.getMonth()]}, ${this.post.postDate.getFullYear()}`
       }
