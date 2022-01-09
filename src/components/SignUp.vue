@@ -327,13 +327,13 @@ export default {
       background: rgba(139, 83, 139, 0.396);
       width: 68%;
       height: 1.4em;
+      color: #fff;
       
       &:focus,
       :active {
         outline: none;
         box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
         font: italic bold 16px Arial, sans-serif;
-        color: #fff;
       }
     }
     input[type="radio"] {
