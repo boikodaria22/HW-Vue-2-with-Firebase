@@ -67,8 +67,9 @@
         :class="[isActive === userInfo['gender'] ? 'active' : '']"
       >
         <input
-          type="radio"
           id="female"
+          type="radio"
+          name="radio"
           value="female"
           v-model="userInfo.gender"
           @focus="setActiveItem('gender')"
@@ -76,8 +77,9 @@
         <label for="female"> Female </label>
 
         <input
-          type="radio"
           id="male"
+          type="radio"
+          name="radio"
           value="male"
           v-model="userInfo.gender"
           @focus="setActiveItem('gender')"
@@ -126,8 +128,8 @@
         :class="[isActive === userInfo['commercialExperience'] ? 'active' : '']"
       >
         <input
-          type="checkbox"
           id="check-experience"
+          type="checkbox"
           v-model="userInfo.commercialExperience"
           true-value="Yes, I have"
           false-value="No, I haven't"
@@ -139,13 +141,13 @@
       </div>
 
       <div
-        v-show="userInfo.commercialExperience === 'Yes, I have'"
         class="sign-up-page__form-item"
+        v-show="userInfo.commercialExperience === 'Yes, I have'"
         :class="[isActive === userInfo['yearsOfExperience'] ? 'active' : '']"
       >
         <input
-          type="number"
           id="show"
+          type="number"
           v-model.number="userInfo.yearsOfExperience"
           @focus="setActiveItem('yearsOfExperience')"
         />
@@ -170,11 +172,11 @@
       >
         <input
           type="text"
-          v-model="userInfo.city"
           v-if="userInfo.country !== 'Ukraine'"
+          v-model="userInfo.city"
           @focus="setActiveItem('city')"
         />
-        <select v-model="userInfo.city" v-else>
+        <select v-else v-model="userInfo.city">
           <option disabled value="">Choose city</option>
           <template v-for="(city, index) in ukrainianCities">
             <option :key="index" :value="city">
@@ -204,9 +206,9 @@
           <option disabled value="">Choose english level</option>
           <option
             v-for="(level, index) in englishLevelsValues"
+            :key="index + level.value"
             :value="level.value"
             :lebel="level.label"
-            :key="index + level.value"
           >
             {{ level.value }}:{{ level.label }}
           </option>
@@ -321,8 +323,7 @@ export default {
     font: bold 16px Arial, sans-serif;
     padding: 0px 20px;
     input[type="text"],
-    input[type="number"],
-    input[type="email"] {
+    input[type="number"] {
       border: none;
       margin: 3px 0px;
       background: rgba(139, 83, 139, 0.396);
@@ -453,4 +454,3 @@ export default {
      }
 }
 </style>
-
