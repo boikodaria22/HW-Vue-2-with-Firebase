@@ -435,13 +435,17 @@ export default {
     position: absolute;
     margin: 10px 0px;
     top: 87%;
-    right: 20%;
+    right: 50%;
 
     &:hover,
     :active,
     :focus {
       background: rgba(139, 83, 139, 0.759);
     }
+    @media screen and (max-width: 600px) {
+      top: 87%;
+      right: 10%;
+     }
   }
  @media screen and (max-width: 600px) {
      margin: 0 auto;
