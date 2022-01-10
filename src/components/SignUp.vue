@@ -67,9 +67,9 @@
         :class="[isActive === userInfo['gender'] ? 'active' : '']"
       >
         <input
-          id="female"
           type="radio"
           name="radio"
+          id="female"
           value="female"
           v-model="userInfo.gender"
           @focus="setActiveItem('gender')"
@@ -77,9 +77,9 @@
         <label for="female"> Female </label>
 
         <input
-          id="male"
           type="radio"
           name="radio"
+          id="male"
           value="male"
           v-model="userInfo.gender"
           @focus="setActiveItem('gender')"
@@ -128,8 +128,8 @@
         :class="[isActive === userInfo['commercialExperience'] ? 'active' : '']"
       >
         <input
-          id="check-experience"
           type="checkbox"
+          id="check-experience"
           v-model="userInfo.commercialExperience"
           true-value="Yes, I have"
           false-value="No, I haven't"
@@ -146,8 +146,8 @@
         :class="[isActive === userInfo['yearsOfExperience'] ? 'active' : '']"
       >
         <input
-          id="show"
           type="number"
+          id="show"
           v-model.number="userInfo.yearsOfExperience"
           @focus="setActiveItem('yearsOfExperience')"
         />
@@ -171,15 +171,15 @@
         :class="[isActive === userInfo['city'] ? 'active' : '']"
       >
         <input
-          type="text"
           v-if="userInfo.country !== 'Ukraine'"
+          type="text"
           v-model="userInfo.city"
           @focus="setActiveItem('city')"
         />
         <select v-else v-model="userInfo.city">
           <option disabled value="">Choose city</option>
           <template v-for="(city, index) in ukrainianCities">
-            <option :key="index" :value="city">
+            <option :value="city" :key="index">
               {{ city }}
             </option>
           </template>
@@ -206,9 +206,9 @@
           <option disabled value="">Choose english level</option>
           <option
             v-for="(level, index) in englishLevelsValues"
-            :key="index + level.value"
             :value="level.value"
             :lebel="level.label"
+            :key="index + level.value"
           >
             {{ level.value }}:{{ level.label }}
           </option>
