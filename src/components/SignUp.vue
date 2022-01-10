@@ -31,7 +31,7 @@
         :class="[isActive === userInfo['email'] ? 'active' : '']"
       >
         <input
-          type="text"
+          type="email"
           v-model.trim="userInfo.email"
           @focus="setActiveItem('email')"
         />
@@ -321,7 +321,8 @@ export default {
     font: bold 16px Arial, sans-serif;
     padding: 0px 20px;
     input[type="text"],
-    input[type="number"] {
+    input[type="number"],
+    input[type="email"] {
       border: none;
       margin: 3px 0px;
       background: rgba(139, 83, 139, 0.396);
