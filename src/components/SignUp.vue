@@ -318,7 +318,7 @@ export default {
   }
   .sign-up-page__form-item {
     color: rgb(37, 90, 159);
-    font: bold 18px Arial, sans-serif;
+    font: bold 16px Arial, sans-serif;
     padding: 0px 20px;
     input[type="text"],
     input[type="number"] {
@@ -326,7 +326,6 @@ export default {
       margin: 3px 0px;
       background: rgba(139, 83, 139, 0.396);
       width: 68%;
-      height: 1.4em;
       color: #fff;
       
       &:focus,
@@ -335,6 +334,9 @@ export default {
         box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
         font: italic bold 16px Arial, sans-serif;
       }
+      @media screen and (max-width: 600px) {
+      width: 60%;
+     }
     }
     input[type="radio"] {
       position: relative;
@@ -415,7 +417,12 @@ export default {
         outline: none;
         box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
       }
+      @media screen and (max-width: 600px) {
+         width: 100%;
+         font-size:14px;
+      }
     }
+    
   }
   button {
     box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
@@ -426,8 +433,9 @@ export default {
     text-transform: uppercase;
     font: bold 20px Arial, sans-serif;
     position: absolute;
+    margin: 10px 0px;
     top: 87%;
-    left: 70%;
+    right: 20%;
 
     &:hover,
     :active,
@@ -435,5 +443,9 @@ export default {
       background: rgba(139, 83, 139, 0.759);
     }
   }
+ @media screen and (max-width: 600px) {
+     margin: 0 auto;
+     }
 }
 </style>
+
