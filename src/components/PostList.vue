@@ -1,9 +1,16 @@
 <template>
   <div class="post-list">
     <div>
-      <h2 v-once>Начальное количество статей {{ posts.length }}</h2>
+      <h2 v-once>Начальное количество статей <span> {{ posts.length }} </span></h2>
     </div>
-    <PostCard />
+
+<b-row class="post-cards">
+      <PostCard 
+        v-for="item in posts" 
+        :key="item.id" 
+        :post="item" 
+      />
+</b-row>
   </div>
 </template>
 <script>
@@ -125,11 +132,19 @@ export default {
 </script>
 <style scoped lang="scss">
 .post-list {
+  .post-cards{
+    padding: 15px 30px;
+    margin: 0;
+  }
   h2 {
-    text-align: left;
+    text-align: center;
     font: italic bold 30px "Fira Sans", serif;
     color: rgba(0, 0, 0, 0.718);
-    margin: 20px;
+    margin: 20px 20px 0;
+    span{
+      color:rgb(165, 112, 26);
+      font-size:40px;
+    }
   }
 }
 </style>

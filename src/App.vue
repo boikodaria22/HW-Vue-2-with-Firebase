@@ -1,13 +1,17 @@
 <template>
-<div id = "app" class = "app">
+<div id="app" class="app">
   <LoginPopUp  
     v-if="showLoginPopUp === true"
     @closePopUp="showLoginPopUp = false"
   />
   <Header  @loginButtonClick="showLoginPopUp = true" />
   <PostList />
-  <AppButton @appButtonClick="appButtonClick()" />
-  <AppPopUp v-if="showAppPopUp === true"
+  <AppButton 
+    @appButtonClick="appButtonClick()" 
+    appButtonText="Save"
+  />
+  <AppPopUp 
+      v-if="showAppPopUp === true"
       @closePopUpEvent="closePopUpEvent()"
       @backPopUpEvent="backPopUpEvent()"
       @continuePopUpEvent="continuePopUpEvent()"

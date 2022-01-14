@@ -4,13 +4,14 @@
     class="button" 
     @click="$emit('appButtonClick')"
    >
-     App Button
+     {{ appButtonText }}
    </button>
   </div>
 </template>
 <script>
 export default {
   name: "AppButton",
+  props:['appButtonText'],
   data: () => ({}),
 };
 </script>
