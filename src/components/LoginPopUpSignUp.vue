@@ -89,14 +89,14 @@ export default {
         this.messageError =
           "You entered different passwords. Please edit them and try again.";
       }
-        if (this.usersUsernames.indexOf(this.userLogin) !== -1) {
-        this.messageError = "This login exist.";
-      }
       e.preventDefault();
     },
     checkLogin() {
       if (!this.userLogin) {
         this.messageError = "Please enter login.";
+      }
+       if (this.usersUsernames.indexOf(this.userLogin) !== -1) {
+        this.messageError = "This login exist.";
         return
       }
     },
@@ -205,3 +205,4 @@ input[type="text"]:placeholder {
   background: rgba(0, 128, 0, 0.327);
 }
 </style>
+
