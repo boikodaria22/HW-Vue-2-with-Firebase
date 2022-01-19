@@ -28,7 +28,6 @@
           class="fadeIn third"
           value="Sign In"
           id="btn-sign-in"
-          @click="$emit('closeDialogLogin')"
         />
       </form>
       <div class="message error">
