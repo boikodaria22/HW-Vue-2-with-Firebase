@@ -118,7 +118,7 @@ input[type="submit"] {
   background-color: #56baed;
   border: 1px solid rgba(128, 128, 128, 0.327);
   color: white;
-  padding: 15px 80px;
+  padding: 15px 60px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
