@@ -7,7 +7,7 @@
       <form @submit="checkFormPopUpSignUp($event)">
         <input
           v-model="userLogin"
-          @focus="checkLogin()"
+          @change="checkLogin()"
           type="email"
           id="login-sign-up"
           class="fadeIn first"
@@ -16,7 +16,7 @@
         />
         <input
           v-model="userPassword"
-          @focus="checkPassword()"
+          @change="checkPassword()"
           type="password"
           id="password-sign-up"
           class="fadeIn second"
@@ -25,7 +25,7 @@
         />
         <input
           v-model="userRepeatedPassword"
-          @focus="checkRepeatedPassword()"
+          @change="checkRepeatedPassword()"
           type="password"
           id="check-password-sign-up"
           class="fadeIn third"
