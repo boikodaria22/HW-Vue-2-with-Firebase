@@ -77,6 +77,10 @@ export default {
       if (!this.userLogin) {
         this.messageError = "Please enter login.";
       }
+      if (this.usersUsernames.indexOf(this.userLogin) === -1) {
+         this.messageError = "This login doesn't exist.";
+       }
+       return
     },
 
     checkPassword() {
@@ -179,3 +183,4 @@ input[type="text"]:placeholder {
   background: rgba(0, 128, 0, 0.327);
 }
 </style>
+
