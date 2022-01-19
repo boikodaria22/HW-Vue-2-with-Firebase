@@ -6,7 +6,7 @@
     >
       <form @submit="checkFormPopUpSignIn($event)">
         <input
-          @input="checkLogin()"
+          @change="checkLogin()"
           v-model.trim="userLogin"
           type="email"
           id="login-sign-in"
@@ -15,7 +15,7 @@
           placeholder="Login"
         />
         <input
-          @input="checkPassword()"
+          @change="checkPassword()"
           v-model.trim="userPassword"
           type="password"
           id="password-sign-in"
