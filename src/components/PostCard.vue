@@ -26,7 +26,7 @@ export default {
       },
       required: true,
       validator: function (prop) {
-        return prop.title.length && prop.body.length;
+        return (prop.title.length && prop.body.length) ? true : false;
       },
     },
   },
