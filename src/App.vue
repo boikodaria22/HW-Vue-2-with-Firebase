@@ -8,7 +8,7 @@
   <PostList />
   <AppButton 
     @appButtonClick="appButtonClick()" 
-    appButtonText="Save"
+    :appButtonText="Save"
   />
   <AppPopUp 
       v-if="showAppPopUp === true"
