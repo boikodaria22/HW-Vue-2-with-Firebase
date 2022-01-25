@@ -89,29 +89,5 @@
   }
 </script>
 <style scoped lang="scss">
-  .post-page {
-    h1 {
-      font-family: 'Courier New', Courier, monospace;
-    }
-    span {
-      font: 600 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      color: rgb(110, 106, 106);
-    }
-  }
-  
-  .comments {
-    line-height: 5px;
-    h3 {
-      font: 800 20px 'Times New Roman', Times, serif;
-      margin-top: 15px;
-    }
-    span {
-      color: rgb(53, 113, 183);
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    p {
-      padding-bottom: 10px;
-      border-bottom: 1px solid gray;
-    }
-  }
+@import '../assets/layouts/index.scss'
 </style>
