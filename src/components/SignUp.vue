@@ -216,7 +216,11 @@
       </div>
 
       <div class="sign-up-page__form-item">
-        <button type="submit">Submit</button>
+        <button 
+        type="submit" 
+        :disabled="сanBeRegistered===false"
+        :class="[сanBeRegistered === false ? 'disabled-button' : '']"
+        >Sign Up</button>
       </div>
     </form>
   </div>
@@ -295,162 +299,33 @@ export default {
       },
     ],
     isActive: "",
+    сanBeRegistered:false,
   }),
+  watch:{
+    userInfo:{
+      deep:true,
+      immediate: true,
+      handler(newValue){
+        this.checkForm(newValue)
+        }
+      }
+  },
+
   methods: {
     setActiveItem(inputLabel) {
       this.isActive = this.userInfo[inputLabel];
     },
+    checkForm(newValue){
+      let values = Object.values(newValue)
+      values.map(item =>{
+        (item!==''&& item!=='null') 
+        ? this.сanBeRegistered = true 
+        : this.сanBeRegistered = false
+       })
+    }
   },
 };
 </script>
 <style scoped lang="scss">
-.sign-up-page {
-  position: relative;
-  padding: 30px 30px 100px;
-  border: 3px solid #fff;
-  background: rgba(255, 255, 255, 0.32);
-  color: rgb(37, 90, 159);
-  width: 70%;
-  margin: 15% auto;
-
-  .sign-up-page__title {
-    font: bold 35px Arial, sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .sign-up-page__form-item {
-    color: rgb(37, 90, 159);
-    font: bold 16px Arial, sans-serif;
-    padding: 0px 20px;
-    input[type="text"],
-    input[type="number"] {
-      border: none;
-      margin: 3px 0px;
-      background: rgba(139, 83, 139, 0.396);
-      width: 68%;
-      color: #fff;
-      
-      &:focus,
-      :active {
-        outline: none;
-        box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
-        font: italic bold 16px Arial, sans-serif;
-      }
-      @media screen and (max-width: 600px) {
-      width: 60%;
-     }
-    }
-    input[type="radio"] {
-      position: relative;
-      height: 16px;
-      width: 16px;
-      outline: none;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: 2px solid rgba(139, 83, 139, 0.759);
-      }
-
-      &:checked::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(139, 83, 139, 0.759);
-        transform: translate(-50%, -50%);
-        visibility: visible;
-      }
-    }
-    input[type="checkbox"] {
-      position: relative;
-      height: 16px;
-      width: 16px;
-      outline: none;
-      display: inline;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 16px;
-        height: 16px;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: 2px solid rgba(139, 83, 139, 0.759);
-      }
-
-      &:checked::after {
-        content: "\2713";
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        width: 10px;
-        height: 10px;
-        transform: translate(-50%, -50%);
-        visibility: visible;
-        color: rgba(139, 83, 139, 0.759);
-      }
-    }
-
-    select {
-      background: rgba(139, 83, 139, 0.396);
-      border: none;
-      cursor: pointer;
-      height: 1.4em;
-      width: 68.5%;
-      padding: 0px 5px;
-      color: #fff;
-      font: bold 16px Arial, sans-serif;
-
-      &:focus,
-      :active {
-        outline: none;
-        box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
-      }
-      @media screen and (max-width: 600px) {
-         width: 100%;
-         font-size:14px;
-      }
-    }
-    
-  }
-  button {
-    box-shadow: 2px 2px 2px 0 rgba(139, 83, 139, 0.759);
-    background: rgba(139, 83, 139, 0.396);
-    border: none;
-    padding: 16px 30px;
-    color: #fff;
-    text-transform: uppercase;
-    font: bold 20px Arial, sans-serif;
-    position: absolute;
-    margin: 10px 0px;
-    top: 87%;
-    right: 50%;
-
-    &:hover,
-    :active,
-    :focus {
-      background: rgba(139, 83, 139, 0.759);
-    }
-    @media screen and (max-width: 600px) {
-      top: 87%;
-      right: 10%;
-     }
-  }
- @media screen and (max-width: 600px) {
-     margin: 0 auto;
-     }
-}
+@import '../assets/layouts/index.scss'
 </style>
