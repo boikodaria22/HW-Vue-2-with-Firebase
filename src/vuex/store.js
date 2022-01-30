@@ -6,9 +6,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: () => ({
     users: [],
-    myPhotoURL: [],
-    myLocation: [],
-    myBio: [],
+    myPhotoURL: '',
+    myLocation: '',
+    myBio: '',
   }),
   getters: {
     firstFiveUsers(state) {
